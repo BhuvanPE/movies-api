@@ -42,7 +42,7 @@ router.put('/:id', function(req, res, next) {
 /* DELETE movie */
 router.delete('/:id', function(req, res, next) {
   //res.send('delete movie' + req.params.id);
-  Movie.findByIdAndDelete(req.params.id, req.body, function(err, movieinfo){
+  Movie.findByIdAndDelete(req.params.id, function(err, movieinfo){
     if(err) res.status(500).send(err);
     else res.sendStatus(200);
   });
